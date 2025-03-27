@@ -3,7 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+      
+   
 }
+
 
 /* 🔹 Header Styling */
 header {
@@ -12,6 +16,7 @@ header {
     align-items: center;
     padding: 10px 20px;
     background-color: #ffffff;
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
 }
 
 /* 🔹 Logo */
@@ -52,9 +57,9 @@ nav ul li a {
 nav ul li ul.dropdown {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 80%;
     left: 0;
-   
+    background-color: #ebb7d1;
     list-style: none;
     width: 180px;
     border-radius: 5px;
@@ -66,9 +71,9 @@ nav ul li ul.dropdown li {
 
 nav ul li ul.dropdown li a {
     display: block;
-    padding: 10px;
+    padding: 6px;
    
-    color: #000000;
+    color: #044123;
     text-align: left;
     border-radius: 0;
 }
@@ -86,16 +91,65 @@ nav ul li:hover ul.dropdown {
     padding: 20px 0;
 }
 
-.nav-buttons {
-    text-decoration: none;
-    background: #00178a;
-    padding: 10px 20px;
-    color: white;
+nav ul li {
+    position: relative; /* Ensure the dropdown is positioned relative to the parent */
+}
+
+nav ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Adjusted to eliminate gaps */
+    left: 0;
+    background-color: #ffffff;
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
+    list-style: none;
+    width: 180px;
     border-radius: 5px;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+nav ul li ul.dropdown li {
+    width: 100%;
+}
+
+nav ul li ul.dropdown li a {
+    display: block;
+    padding: 8px 10px;
+    color: #000000;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li ul.dropdown li a:hover {
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
+    color: #e1e3f7;
+    font-weight: bold;
+}
+
+/* 🔹 Show Dropdown on Hover (Desktop) */
+nav ul li:hover ul.dropdown {
+    display: block;
+}
+
+
+.nav-buttons {
+    background: linear-gradient(135deg, #002F9E, #001F8B); /* Gradient Blue */
+    color: #FFFFFF; /* White text */
+    padding: 12px 24px;
     font-size: 16px;
     font-weight: bold;
     border: none;
+    border-radius: 8px; /* Softer corners */
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.nav-buttons:hover{
+    background: linear-gradient(135deg, #001F8B, #000C66);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* 🔹 Hamburger Menu */
@@ -154,12 +208,13 @@ nav ul li:hover ul.dropdown {
 
     nav ul li ul.dropdown {
         
-        position: static;
+        
         display: none;
         width: 100%;
-        background-color: rgb(226, 231, 249);
+        background-color: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
         text-align: center;
         width:450px
+        
         
     }
 
@@ -170,14 +225,11 @@ nav ul li:hover ul.dropdown {
     text-align: center;
     margin-left: 20%;
     width: 350px;
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
     
 }
 
-.dropdown li{
-    border: #00178a solid;
-    margin-top: 5px;
-    
-}
+
     .nav-buttons-container {
         flex-direction: column;
         align-items: center;
@@ -189,7 +241,14 @@ nav ul li:hover ul.dropdown {
     .menu {
         display: flex;
     }
+
+    nav ul li:hover ul.dropdown {
+        display: block;
+    }
+    
 }
+
+
 /* 🔹 Background Video */
 /* 🔹 General Reset */
 * {
@@ -211,10 +270,12 @@ nav ul li:hover ul.dropdown {
     height: 100%;
     object-fit: cover;
     opacity: 0.3;
+   
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
 }
 
 /* 🔹 Overlay Text */
@@ -456,11 +517,12 @@ body {
 .info-section1 {
     text-align: center;
     padding: 50px 20px;
-    background: #ffffff;
-    max-width: 1200px;
+    
+    width: 100%;
     margin: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
 }
 
 .info-section1 .ai-description {
@@ -483,10 +545,11 @@ body {
     text-align: center;
     padding: 60px 20px;
     background: #e1e3f7;
-    max-width: 1200px;
+    width: 100%;
     margin: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #a76787, #8663ab, #608899); 
 }
 
 .container h2 {
@@ -511,6 +574,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
 }
 
 .card img {
@@ -534,10 +598,11 @@ body {
     text-align: center;
     padding: 50px 20px;
     background: #ffffff;
-    max-width: 1200px;
+    width: 100%;
     margin: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
 }
 
 .attend .whyAttend {
@@ -659,10 +724,11 @@ body {
     text-align: center;
     padding: 50px 20px;
     background: #d5d5f8;
-    max-width: 1200px;
+    width: 100%;
     margin: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #a76787, #8663ab, #608899); 
 }
 
 .tickets h1 {
@@ -699,6 +765,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
 }
 
 .pass:hover {
@@ -848,7 +915,8 @@ body {
     font-size: 28px;
     font-weight: bold;
     color: #2a046a;
-    margin: 30px 0;
+    
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
 }
 
 /* 🔹 Layout for Large Screens */
@@ -861,8 +929,9 @@ section {
     padding: 40px;
     background-color: #f9f9f9;
     border-radius: 10px;
-    max-width: 1200px;
+    width: 100%;
     margin: auto;
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
 }
 
 /* 🔹 Image */
