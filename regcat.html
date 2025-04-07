@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Registration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        .btn {
-            display: block;
-            width: 200px;
-            margin: 10px auto;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
-    <script>
-        function goToPage(category) {
-            // Redirect to a new page based on category
-            window.location.href = category + ".html";
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+      background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7);
+    }
+
+    .link {
+      margin: 20px auto;
+      width: 250px;
+      background: whitesmoke;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .link:hover {
+      transform: scale(1.05);
+    }
+
+    .link a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
-    <h2>Event Registration</h2>
-    <p>Select a category:</p>
+  <h2>Event Registration</h2>
+  <p>Select a category:</p>
 
-    <button ><a href="https://form.jotform.com/pooja5102870/form">Association</a></button>
-    <button class="btn" onclick="goToPage('sponsored')">Sponsored</button>
-    <button class="btn" onclick="goToPage('students')">Students</button>
-    <button class="btn" onclick="goToPage('members')">Members</button>
-    <button class="btn" onclick="goToPage('delegates')">Delegates</button>
+  <div class="link"><a href="email.html">Association</a></div>
+  <div class="link"><a href="email1.html">Sponsored</a></div>
+  <div class="link"><a href="email2.html">Students</a></div>
+  <div class="link"><a href="email3.html">Members</a></div>
+  <div class="link"><a href="email4.html">Delegates</a></div>
 
 </body>
 </html>

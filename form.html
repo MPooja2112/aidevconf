@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Enter Your Details</h1>
+            <form id="user-form">
+                <div class="input-field">
+                    <label>Email:</label>
+                    <input id="email" type="email" readonly>
+                </div>
+                <div class="input-field">
+                    <label>Name:</label>
+                    <input id="name" type="text" required>
+                </div>
+                <div class="input-field">
+                    <label>Address:</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <script src="form.js"></script>
+</body>
+</html>

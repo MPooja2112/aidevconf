@@ -344,6 +344,7 @@ nav ul li:hover ul.dropdown {
     border-radius: 8px;
     color: rgb(32, 2, 114);
     width: 80px;
+    margin-left: 10px;
 }
 
 .countdown-box span {
@@ -924,45 +925,7 @@ body {
 }
 
 /* 🔹 Layout for Large Screens */
-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: nowrap;  /* Prevents wrapping on large screens */
-    padding: 40px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    width: 100%;
-    margin: auto;
-    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
-}
 
-/* 🔹 Image */
-section img {
-    max-width: 33%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* 🔹 Address Box */
-.box {
-    width: 33%;
-    background: #e6e6fa;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-    color: #2a046a;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* 🔹 Google Maps */
-iframe {
-    width: 33%;
-    height: 350px;
-    border-radius: 10px;
-}
 
 /* 🔹 Responsive Design */
 @media (max-width: 768px) {

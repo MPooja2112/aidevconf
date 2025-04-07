@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Sign Up</title>
+</head>
+<body>
+
+    <h2>Sign Up Form</h2>
+
+    <form id="signUpForm">
+        
+        <div class="input-group">
+            <label for="rEmail">Email:</label>
+            <input type="email" id="rEmail" readonly>
+        </div>
+        <input type="password" id="rPassword" placeholder="Enter your password" required><br>
+        <input type="text" id="fName" placeholder="Enter First Name" required><br>
+        <input type="text" id="lName" placeholder="Enter Last Name" required><br>
+        <input type="tel" id="phoneNumber" placeholder="Enter Phone Number" required><br>
+
+        <label for="sponsorCategory">Members:</label>
+        <select id="sponsorCategory" required>
+            <option value="Corporate">Professionals</option>
+            <option value="Individual">Industry Experts</option>
+            <option value="Individual">Enthusiasts</option>
+           
+            <option value="Other">Other</option>
+        </select><br>
+
+        <input type="text" id="otherSponsor" placeholder="Specify Other Sponsor" style="display: none;"><br>
+
+        <input type="text" id="city" placeholder="Enter City" required><br>
+        <input type="text" id="state" placeholder="Enter State" required><br>
+        <input type="text" id="country" placeholder="Enter Country" required><br>
+
+        <button id="submitSignUp">Sign Up</button>
+    </form>
+
+    <div id="signUpMessage" style="display: none; color: red;"></div>
+
+    <script src="firebaseauth.js" type="module"></script>
+</body>
+</html>

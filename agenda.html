@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="agenda.css">
+    <style>
+        * {
+          box-sizing: border-box;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          margin: 0;
+          padding: 0;
+          
+        }
+    
+        body {
+          background: #f3f4f6;
+          padding: 20px;
+          background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
+        }
+    
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+        }
+    
+        .card {
+          background-color: white;
+          padding: 20px;
+          border-radius: 16px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
+        
+          
+          transition: transform 0.3s ease;
+          margin-top: 20px;
+        }
+    
+        .card:hover {
+          transform: translateY(-5px);
+          background-color: white;
+          
+        }
+        .care:active{
+          background-color: white;
+        }
+        .title {
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: #190346;
+        }
+    
+        .info {
+          margin-bottom: 8px;
+          color: #4b5563;
+        }
+    
+        .speaker {
+          margin-top: 10px;
+          font-weight: 500;
+          color: #190346;
+        }
+    .date{
+      color: #190346;
+    }
+        @media (max-width: 600px) {
+          .card {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      </style>
+</head>
+<body>
+    <h1>AGENDA 2025</h1>
+
+    <div class="container">
+        <!-- Session 1 -->
+        <div class="card">
+          <div class="title">HOW DEEPLY AI IS  TRANSFORMING IN HEALTHCARE SECTOR</div>
+          <div class="info" >📅 <span class="date">Date:</span> 10th April 2025</div>
+          <div class="info">⏰ <span class="date">Time:</span>10.15 TO 11.00 AM</div>
+          <div class="speaker">🎤 Dr.Ramesh & Sunil - (Wadhwani Founders)</div>
+        </div>
+    
+        <!-- Session 2 -->
+        <div class="card">
+          <div class="title">DEBATE FOR AI TECHNOLOGIES</div>
+          <div class="info">📅 <span class="date">Date:</span> 10th April 2025</div>
+          <div class="info">⏰ <span class="date">Time:</span> 11.15 TO 11.45 AM</div>
+          <div class="speaker">🎤 Dr.Venkat Padmanabhan (Deputy Managing Director,Microsoft Research india) , Dr.Shashi Buluswar (CEO Institite for Transformative Technologies) </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">AI CHALLENGES & INNOVATION</div>
+        <div class="info">📅<span class="date">Date:</span>10th April 2025</div>
+        <div class="info">⏰ <span class="date">Time:</span>11.45 TO 12.15</div>
+        <div class="speaker">🎤 Vanitha Venugopal (ITNI CEO) , Mr.Sridhar Vembu(CEO of ZOHO)</div>
+      </div>
+
+      <div class="card">
+        <div class="title">AI FOR DIAGNOSTICS AND EARLY DETECTION</div>
+        <div class="info">📅 <span class="date">Date:</span> 10th April 2025</div>
+        <div class="info">⏰ <span class="date">Time:</span>12.15 TO 1.00 PM</div>
+        <div class="speaker">🎤 Dr.Ramesh & Sunil - (Wadhwani Founders)</div>
+      </div>
+
+    
+    
+      <div class="card">
+        <div class="title">AI IN HOSPITALS AND CLINICAL DESCISION SUPPORT</div>
+        <div class="info">📅 <span class="date">Date:</span>10th April 2025</div>
+        <div class="info">⏰ <span class="date">Time:</span>2.00 TO 2.15 PM</div>
+        <div class="speaker">🎤 Nalli Kuppuswami Chetti</div>
+      </div>
+      <div class="card">
+        <div class="title">Navigate Labs Presentation</div>
+        <div class="info">📅<span class="date">Date:</span> 10th April 2025</div>
+        <div class="info">⏰<span class="date">Time:</span>2.15 TO 2.30 PM</div>
+        <div class="speaker">🎤 Vikram , Nandees</div>
+      </div>
+      <div class="card">
+        <div class="title">AI INNOVATIONS IN HEALTHCARE STARTUPS</div>
+        <div class="info">📅 <span class="date">Date:</span> 10th April 2025</div>
+        <div class="info">⏰ <span class="date">Time:</span>2.30 TO 3.00 PM</div>
+        <div class="speaker">🎤Dr.Soumya Swaminathan (Chief Scientist at the world Health Organisation) , Dr.Sandeep Dewan (Director of Fortis Healthcare)</div>
+      </div>
+
+      <div class="card">
+        <div class="title">AI ETHICS , DATA PRIVACY AND REGULATION</div>
+        <div class="info">📅 <span class="date">Date:</span> 10th April 2025</div>
+        <div class="info">⏰ <span class="date">Time:</span>3.15 TO 4.00 PM</div>
+        <div class="speaker">🎤 Dr.Prashant Warier (CEO of Quare.Ai) , Dr.Aravindan Selvaraj (Executive Director, Kauvery Hospital)</div>
+      </div>
+      <div class="card">
+        <div class="title">AI IN TUBERCULOSIS DETECTION</div>
+        <div class="info">📅 <span class="date">Date:</span> 10th April 2025</div>
+        <div class="info">⏰ <span class="date">Time:</span>4.00 TO 4.30 PM</div>
+        <div class="speaker">🎤 Dr.Preetha Reddy (Executive Vice Chairperson Apollo)  , Mr.Nitin Kumar (Vice president of Healthcare at TCS)</div>
+      </div>
+     
+</body>
+</html>
