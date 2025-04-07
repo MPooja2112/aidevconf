@@ -4,12 +4,12 @@ import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10
 
 // Firebase Configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyC9KI-Wcvmn8iARWZ9hujZ-JFz_QHEHFWE",
-    authDomain: "login-form-d5dab.firebaseapp.com",
-    projectId: "login-form-d5dab",
-    storageBucket: "login-form-d5dab.appspot.com",
-    messagingSenderId: "255088583795",
-    appId: "1:255088583795:web:e89d21e42ec0e446887606"
+    apiKey: "AIzaSyC9vpbwOvsHhqBMdLCMdkmgFYfh571W3Ww",
+    authDomain: "sponsorform-68bd8.firebaseapp.com",
+    projectId: "sponsorform-68bd8",
+    storageBucket: "sponsorform-68bd8.appspot.com",
+    messagingSenderId: "920718402361",
+    appId: "1:920718402361:web:1a62f178dcf685ccde7ee8"
 };
 
 // Initialize Firebase
@@ -18,57 +18,119 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 // Function to Show Messages
-function showMessage(message, divId) {
-    var messageDiv = document.getElementById(divId);
+function showMessage(message, divId, color = "red") {
+    const messageDiv = document.getElementById(divId);
+    if (!messageDiv) return;
     messageDiv.style.display = "block";
+    messageDiv.style.color = color;
     messageDiv.innerHTML = message;
-    messageDiv.style.opacity = 1;
-    setTimeout(() => {
-        messageDiv.style.opacity = 0;
+    
+    clearTimeout(showMessage.timeoutId);
+    showMessage.timeoutId = setTimeout(() => {
+        messageDiv.style.display = "none";
     }, 5000);
 }
 
-// Sign Up Functionality
-const signUp = document.getElementById('submitSignUp');
-signUp.addEventListener('click', (event) => {
-    event.preventDefault();
-    const email = document.getElementById('rEmail').value;
-    const password = document.getElementById('rPassword').value;
-    const firstName = document.getElementById('fName').value;
-    const lastName = document.getElementById('lName').value;
+// Function to handle form submission
+document.addEventListener("DOMContentLoaded", () => {
+    const signUpButton = document.getElementById('submitSignUp');
+    const emailInput = document.getElementById("rEmail");
 
-    // Validate Inputs
-    if (!email || !password || !firstName || !lastName) {
-        showMessage('All fields are required!', 'signUpMessage');
-        return;
+    // Auto-fill email from localStorage or URL parameter
+    const userEmail = localStorage.getItem("userEmail") || new URLSearchParams(window.location.search).get("email");
+
+    if (userEmail) {
+        emailInput.value = userEmail;
+    } else {
+        emailInput.removeAttribute("readonly"); // Allow manual input if no preset email
     }
 
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+    if (!signUpButton) return;
+
+    signUpButton.addEventListener('click', async (event) => {
+        event.preventDefault();
+
+        const email = emailInput?.value.trim();
+        const password = document.getElementById('rPassword')?.value.trim();
+        const firstName = document.getElementById('fName')?.value.trim();
+        const lastName = document.getElementById('lName')?.value.trim();
+        const phoneNumber = document.getElementById('phoneNumber')?.value.trim();
+        const sponsorCategory = document.getElementById('sponsorCategory')?.value;
+        const otherSponsorInput = document.getElementById('otherSponsor');
+        const city = document.getElementById('city')?.value.trim();
+        const state = document.getElementById('state')?.value.trim();
+        const country = document.getElementById('country')?.value.trim();
+
+        // Validate Email Format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage('Enter a valid email address!', 'signUpMessage');
+            return;
+        }
+
+        // Validate Password
+        if (password.length < 6) {
+            showMessage('Password must be at least 6 characters!', 'signUpMessage');
+            return;
+        }
+
+        // Ensure all fields are filled
+        if (!email || !password || !firstName || !lastName || !phoneNumber || !sponsorCategory || !city || !state || !country) {
+            showMessage('All fields are required!', 'signUpMessage');
+            return;
+        }
+
+        // Ensure 'Other' sponsor category has input
+        let selectedSponsor = sponsorCategory;
+        if (sponsorCategory === "Other") {
+            if (!otherSponsorInput || !otherSponsorInput.value.trim()) {
+                showMessage('Please specify the sponsor category!', 'signUpMessage');
+                return;
+            }
+            selectedSponsor = otherSponsorInput.value.trim();
+        }
+
+        try {
+            // Create User in Firebase Auth
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
-            const userData = {
-                email: email,
-                firstName: firstName,
-                lastName: lastName
-            };
 
             // Store User Data in Firestore
-            setDoc(doc(db, "users", user.uid), userData)
-                .then(() => {
-                    showMessage('Account Created Successfully!', 'signUpMessage');
-                    window.location.href = 'index.html';  // Redirect if needed
-                })
-                .catch((error) => {
-                    console.error("Error writing document", error);
-                    showMessage('Error saving user data.', 'signUpMessage');
-                });
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            if (errorCode === 'auth/email-already-in-use') {
-                showMessage('Email Address Already Exists!', 'signUpMessage');
+            await setDoc(doc(db, "sponsors", user.uid), {
+                email,
+                firstName,
+                lastName,
+                phoneNumber,
+                sponsorCategory: selectedSponsor,
+                city,
+                state,
+                country
+            });
+
+            showMessage('Account Created Successfully!', 'signUpMessage', 'green');
+            setTimeout(() => {
+                window.location.href = 'index.html';  // Redirect after success
+            }, 2000);
+
+        } catch (error) {
+            console.error("Firebase Error Code:", error.code);
+            console.error("Firebase Error Message:", error.message);
+            showMessage(`Error: ${error.message}`, 'signUpMessage');
+        }
+    });
+
+    // Handle 'Other' sponsor category visibility
+    const sponsorCategoryDropdown = document.getElementById('sponsorCategory');
+    if (sponsorCategoryDropdown) {
+        sponsorCategoryDropdown.addEventListener('change', function () {
+            const otherSponsorInput = document.getElementById('otherSponsor');
+            if (this.value === "Other") {
+                otherSponsorInput.style.display = "block";
+                otherSponsorInput.setAttribute("required", "true");
             } else {
-                showMessage('Unable to create user', 'signUpMessage');
+                otherSponsorInput.style.display = "none";
+                otherSponsorInput.removeAttribute("required");
             }
         });
+    }
 });
