@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP verification</title>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"> -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    </script>
+    <link rel="stylesheet" href="email.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Email OTP</h1>
+            <div class="email">
+                <input id="email" type="email" placeholder="Enter your email" >
+
+            </div>
+            <div class="email verify">
+                <input id="otp-input" type="number" placeholder="enter code" >
+<button id="btn-verify-otp">verify</button>
+            </div>
+<button class="btn-send-otp">send otp</button>
+        </div>
+    </section>
+</body>
+<script src="emailotp5.js"></script>
+</html>

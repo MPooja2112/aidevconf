@@ -5,13 +5,13 @@ import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10
 // Firebase Configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyAWcFGNSmqbGbCJeexcVRmslp5b54MafTU",
-    authDomain: "associationform-fd742.firebaseapp.com",
-    projectId: "associationform-fd742",
-    storageBucket: "associationform-fd742.firebasestorage.app",
-    messagingSenderId: "71686643427",
-    appId: "1:71686643427:web:a24ab6b29fac8677c06fd6",
-    measurementId: "G-L7MRRPMRV3"
+    apiKey: "AIzaSyAkMdpI53kK6p5bpY2bBLBrO2aRuTCzrjo",
+    authDomain: "studentsform-34a9c.firebaseapp.com",
+    projectId: "studentsform-34a9c",
+    storageBucket: "studentsform-34a9c.firebasestorage.app",
+    messagingSenderId: "683338010873",
+    appId: "1:683338010873:web:48c55103c78583fbeb1228",
+    measurementId: "G-2H64615SD6"
   };
 
 // Initialize Firebase
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const user = userCredential.user;
 
             // Store User Data in Firestore
-            await setDoc(doc(db, "association", user.uid), {
+            await setDoc(doc(db, "student", user.uid), {
                 email,
                 firstName,
                 lastName,

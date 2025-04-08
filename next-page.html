@@ -1,44 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase Sign Up</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[readonly] {
+            background-color: #eaeaea;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #signUpMessage {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            input, select, button {
+                font-size: 0.95rem;
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <h2>Sign Up Form</h2>
 
     <form id="signUpForm">
-        
         <div class="input-group">
-            <label for="rEmail">Email:</label>
+            <label for="rEmail">Email</label>
             <input type="email" id="rEmail" readonly>
         </div>
-        <input type="password" id="rPassword" placeholder="Enter your password" required><br>
-        <input type="text" id="fName" placeholder="Enter First Name" required><br>
-        <input type="text" id="lName" placeholder="Enter Last Name" required><br>
-        <input type="tel" id="phoneNumber" placeholder="Enter Phone Number" required><br>
 
-        <label for="sponsorCategory">Sponsor Category:</label>
+        <input type="password" id="rPassword" placeholder="Password" required>
+        <input type="text" id="fName" placeholder="First Name" required>
+        <input type="text" id="lName" placeholder="Last Name" required>
+        <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+
+        <label for="sponsorCategory">Association</label>
         <select id="sponsorCategory" required>
-            <option value="Corporate">Institutional Members</option>
-            <option value="Individual">Corporate Members</option>
-            <option value="Individual">Professional Associations</option>
+            <option value="Institutional Member">Institutional Member</option>
+            <option value="Corporate Member">Corporate Member</option>
+            <option value="Professional Associations">Professional Associations</option>
             <option value="Other">Other</option>
-        </select><br>
+        </select>
 
-        <input type="text" id="otherSponsor" placeholder="Specify Other Sponsor" style="display: none;"><br>
+        <input type="text" id="otherSponsor" placeholder="Other Sponsor Name" style="display: none;">
 
-        <input type="text" id="city" placeholder="Enter City" required><br>
-        <input type="text" id="state" placeholder="Enter State" required><br>
-        <input type="text" id="country" placeholder="Enter Country" required><br>
+        <input type="text" id="city" placeholder="City" required>
+        <input type="text" id="state" placeholder="State" required>
+        <input type="text" id="country" placeholder="Country" required>
 
         <button id="submitSignUp">Sign Up</button>
     </form>
 
-    <div id="signUpMessage" style="display: none; color: red;"></div>
+    <div id="signUpMessage" style="display: none;"></div>
 
     <script src="firebaseauth.js" type="module"></script>
 </body>

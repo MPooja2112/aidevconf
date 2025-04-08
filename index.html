@@ -6,6 +6,202 @@
     <title>AIDEVCONF</title>
     <link rel="icon" href="img/img1.png">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 40px 20px;
+          background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7);
+          background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
+          
+        }
+    
+        h1 {
+          text-align: center;
+          font-size: 2.5rem;
+          margin-bottom: 40px;
+          color: #333;
+        }
+    
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 40px;
+        }
+    
+        .column {
+          flex: 1 1 300px;
+          max-width: 500px;
+          
+          background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7);
+          border-radius: 12px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          padding: 30px;
+        }
+    
+        .column h2 {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+          color: #27055e;
+          border-bottom: 2px solid #27055e;
+          padding-bottom: 10px;
+        }
+    
+        .column ul {
+          list-style-type: none;
+          padding-left: 0;
+        }
+    
+        .column ul li {
+          margin-bottom: 12px;
+          font-size: 1rem;
+          color: #333;
+          font-weight: bold;
+        }
+    
+        @media (max-width: 768px) {
+          .container {
+            flex-direction: column;
+            align-items: stretch;
+          }
+        }
+
+
+        .section {
+      margin-top: 45px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: rgb(60, 8, 145);
+      font-weight: bold;
+    }
+    .section h3 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: rgb(23, 3, 56);
+      font-weight: bold;
+    }
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .speaker-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .speaker-card img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #00d5ff;
+      margin-bottom: 15px;
+    }
+
+    .speaker-card h3 {
+      margin: 5px 0;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .speaker-card p {
+      font-size: 0.9rem;
+      color: #ccc;
+      color: rgb(60, 8, 145);
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .section h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Title Styling */
+#chief-guest-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  font-weight: bold;
+}
+
+/* Scroll View Container */
+#chief-guest-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar (optional, for aesthetic) */
+#chief-guest-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Scrollable Cards */
+#palanivel-card,
+#vanitha-card,
+#uma-card,
+#senthilrajan-card,
+#nalli-card {
+  min-width: 220px;
+  flex: 0 0 auto;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#palanivel-card:hover,
+#vanitha-card:hover,
+#uma-card:hover,
+#senthilrajan-card:hover,
+#nalli-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#palanivel-card img,
+#vanitha-card img,
+#uma-card img,
+#senthilrajan-card img,
+#nalli-card img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Text Styling */
+#palanivel-card p,
+#vanitha-card p,
+#uma-card p,
+#senthilrajan-card p,
+#nalli-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+    
+      </style>
 </head>
 <body>
 
@@ -29,8 +225,9 @@
                     <a href="#">SPEAK &#x2B9B;
                     </a>
                     <ul class="dropdown">
-                        <li><a href="reg.html">Register as a speaker</a></li>
+                        <li><a href="email5.html">Register as a speaker</a></li>
                         <li><a href="propose.html">Propose your talk</a></li>
+                        <li><a href="https://forms.gle/jrtMvt2XxaXSYMof6">Register as Exhibitor</a></li>
                     </ul>
                 </li>
                 <li>
@@ -72,16 +269,16 @@
          
 
         <p class="overlay-text"> 
-            &nbsp;&nbsp; AI DEVELOPERS' CONFERENCE INDIA 
+            &nbsp;&nbsp; FUTURE OF AI IN HEALTHCARE 
            
         </p>
 
         <p class="overlay-text1"> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Building AI. Innovating with AI. <br>
+            &nbsp;&nbsp;&nbsp;<strong>Building AI. Innovating with AI.</strong> <br>
             <br>
-            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHENNAI TRADE CENTER <br>
+            &nbsp;&nbsp; CHENNAI TRADE CENTER <br>
             
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10th MAY, 2025 (Sat)
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10th MAY, 2025 (SATURDAY)
 
            
         </p>
@@ -94,30 +291,30 @@
         <div class="countdown-container">
             <div class="countdown-box">
                 <span id="days">0</span>
-                <p>Days</p>
+                <p>D</p>
             </div>
             <div class="countdown-box">
                 <span id="hours">0</span>
-                <p>Hours</p>
+                <p>H</p>
             </div>
             <div class="countdown-box">
                 <span id="minutes">0</span>
-                <p>Minutes</p>
+                <p>M</p>
             </div>
             <div class="countdown-box">
                 <span id="seconds">0</span>
-                <p>Seconds</p>
+                <p>S</p>
             </div>
         </div>
     </div>
 
     <div class="info-section1">
         <p class="ai-description">
-            What is AI DevConf?
+            What is AIConnect India 2025?
         </p>
-        <p>&nbsp; &nbsp; &nbsp; DevConf is a premier conference and expo tailored for tech professionals and developers looking to stay ahead by either leveraging AI in their work or contributing to the advancement of AI technologies.</p>
+        <p>&nbsp; &nbsp; &nbsp; AIConnect India 2025 is a flagship conference and expo designed for tech innovators, developers, and industry leaders who are shaping the future of Artificial Intelligence. Whether you're integrating AI into your products or building cutting-edge AI technologies, this event is your platform to connect, learn, and grow.</p>
     </div>
-
+   
 
 <!--    <div class="info-section2">
         <p class="ai-description">
@@ -128,23 +325,58 @@
 </main>
 -->
 
+<h1>CONFERENCE TRACKS</h1>
+
+  <div class="container">
+    <div class="column">
+      <h2>Building AI</h2>
+      <ul>
+        <li>AI Challenges & Innovation</li>
+        <li>Debate for AI Technologies</li>
+        <li>AI Ethics, Data Privacy and Regulations</li>
+        <li>AI Innovations in Healthcare Startups</li>
+      </ul>
+    </div>
+    
+    <div class="column">
+      <h2>Innovating with AI</h2>
+      <ul>
+        <li>How Deeply AI is Transforming in Healthcare Sector</li>
+        <li>AI for Diagnostics and Early Detection</li>
+        <li>AI in Hospitals and Clinical Decision Support</li>
+        <li>AI in Tuberculosis Detection</li>
+      </ul>
+    </div>
+  </div>
+
 <div class="container">
 <h2>WHO SHOULD ATTEND?</h2>
 <div class="grid">
     <div class="card">
         <img src="img/classmates.png" alt="Students">
-        <p>Students</p>
-    </div>
-    
-    <div class="card">
-        <img src="img/developer.png" alt="Developers">
-        <p>Developers</p>
+        <p>Engineering Students</p>
     </div>
     <div class="card">
         <img src="img/professionals.png" alt="Developers">
-        <p>professionals</p>
+        <p>Healthcare Professionals</p>
     </div>
-    
+    <div class="card">
+        <img src="img/gradient-ai-alignment-illustration.png" alt="Developers">
+        <p>AI Technology Experts</p>
+    </div>
+   
+    <div class="card">
+        <img src="img/img3.jpg" alt="Developers" height="550px" width="550px">
+        <p>NGOs and Healthcare organization</p>
+    </div>
+    <div class="card">
+        <img src="img/gradient-ai-alignment-illustration.png" alt="Developers">
+        <p>Entrepreneurs and business leaders</p>
+    </div>
+    <div class="card">
+        <img src="img/gradient-ai-alignment-illustration.png" alt="Developers">
+        <p>Startups and Industry experts</p>
+    </div>
     
 </div>
 </div>
@@ -160,6 +392,154 @@ Learn how you can contribute to revolutionary AI frameworks that are reshaping h
 </p>
 </div>
 
+<div>
+    <h2 id="chief-guest-title">CHIEF GUEST</h2>
+    <div id="chief-guest-grid">
+  
+      <div id="palanivel-card">
+        <img src="img/chief.jpg" alt="Palanivel Thiaga Rajan">
+        <p><strong>Palanivel Thiaga Rajan</strong><br>Information Technology Minister</p>
+      </div>
+  
+      <div id="vanitha-card">
+        <img src="img/chief1.jpg" alt="Vanitha Venugopal">
+        <p><strong>Vanitha Venugopal</strong><br>CEO of Tamil Nadu Technology Hub</p>
+      </div>
+  
+      <div id="uma-card">
+        <img src="https://via.placeholder.com/150" alt="Uma Maheshwari">
+        <p><strong>Uma Maheshwari</strong><br>TN-Rise Women Startup Council</p>
+      </div>
+  
+      <div id="senthilrajan-card">
+        <img src="img/chief2.jpg" alt="Dr. A. Senthilrajan">
+        <p><strong>Dr. A. Senthilrajan</strong><br>Registrar, Alagappa University</p>
+      </div>
+  
+      <div id="nalli-card">
+        <img src="img/chief3.jpg" alt="Nalli Kuppuswami Chetti">
+        <p><strong>Nalli Kuppuswami Chetti</strong><br>Chair, Nalli Silk Sarees</p>
+      </div>
+
+      <div id="nalli-card">
+        <img src="img/chief3.jpg" alt="Nalli Kuppuswami Chetti">
+        <p><strong>Nalli Kuppuswami Chetti</strong><br>Chair, Nalli Silk Sarees</p>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+
+<div class="section">
+    <h2>TENTATIVE SPEAKERS</h2>
+    <div class="speakers-grid">
+
+      
+
+      <div class="speaker-card">
+        <img src="img/s2.jpg" alt="Speaker">
+        <h3>Mr. Mark Zuckerberg</h3>
+        <p>Founder of Meta AI</p>
+      </div>
+
+      <div class="speaker-card">
+        <img src="img/s3.jpg" alt="Speaker">
+        <h3>Dr. Soumya Swaminathan</h3>
+        <p>Chief Scientist, WHO</p>
+      </div>
+
+      <div class="speaker-card">
+        <img src="img/s4.jpg" alt="Speaker">
+        <h3>Mr. Anand Rangarajan</h3>
+        <p>VP, Engineering and Google Bangalore Site Lead</p>
+      </div>
+
+      <div class="speaker-card">
+        <img src="img/s5.jpg" alt="Speaker">
+        <h3>Dr. Ramesh &amp; Sunil</h3>
+        <p>Founders of Wadhwani AI</p>
+      </div>
+
+      <div class="speaker-card">
+        <img src="img/s6.jpg" alt="Speaker">
+        <h3>Mr. Sridhar Vembu</h3>
+        <p>CEO of Zoho</p>
+      </div>
+
+      <div class="speaker-card">
+        <img src="img/s7.jpg" alt="Speaker">
+        <h3>Dr. Republica Sridhar</h3>
+        <p>RMD Nursing Home</p>
+      </div>
+
+      <div class="speaker-card">
+        <img src="img/s8.jpg" alt="Speaker">
+        <h3>Sh. Praveen P</h3>
+        <p>Nair, IAS</p>
+      </div>
+
+
+      <div class="speaker-card">
+        <img src="img/s16.jpg" alt="Speaker">
+        <h3>Dr. Aravindan Selvaraj</h3>
+        <p>Executive Director, Kauvery Hospital</p>
+      </div>
+  
+    </div>
+  </div>
+
+  
+
+<div class="section">
+    <div class="speakers-grid">
+  
+      <div class="speaker-card">
+        <img src="img/s9.jpg" alt="Speaker">
+        <h3>Mr. Swami Sivasubramanian</h3>
+        <p>Vice President of Amazon</p>
+      </div>
+  
+      <div class="speaker-card">
+        <img src="img/s10.jpg" alt="Speaker">
+        <h3>Dr. Prashant Warier</h3>
+        <p>CEO of Qure.ai</p>
+      </div>
+  
+      <div class="speaker-card">
+        <img src="img/s11.jpg" alt="Speaker">
+        <h3>Mr. Srinivas Kandula</h3>
+        <p>CEO of Former Capgemini India</p>
+      </div>
+  
+      <div class="speaker-card">
+        <img src="img/s12.jpg" alt="Speaker">
+        <h3>Dr. Sandeep Dewan</h3>
+        <p>Director of Fortis Healthcare</p>
+      </div>
+  
+      <div class="speaker-card">
+        <img src="img/s13.jpg" alt="Speaker">
+        <h3>Mr. Girish Raghavan</h3>
+        <p>Vice President of GE Healthcare</p>
+      </div>
+  
+      <div class="speaker-card">
+        <img src="img/s14.jpg" alt="Speaker">
+        <h3>Dr. Preetha Reddy</h3>
+        <p>Executive Vice Chairperson, Apollo</p>
+      </div>
+  
+      <div class="speaker-card">
+        <img src="img/s15.jpg" alt="Speaker">
+        <h3>Mr. Nitin Kumar</h3>
+        <p>Vice President of Healthcare at TCS</p>
+      </div>
+  
+      
+    </div>
+  </div>
+  
 
 <div id="tic" class="tickets">
     <h1>TICKETS & PASSES</h1>
@@ -173,7 +553,7 @@ Learn how you can contribute to revolutionary AI frameworks that are reshaping h
             <h5>🗸 Access to Expo <br>
                 🗸 Access to Keynotes <br>
                 🗸 Access to Succeeding with AI track on both days</h5>
-                <p><a href="reg1.html">Avail Now</a></p>
+                <p><a href="regcat.html">Avail Now</a></p>
           </div>
 
           <div class="pass">
@@ -234,12 +614,7 @@ Learn how you can contribute to revolutionary AI frameworks that are reshaping h
         </iframe>
     </div>
 </section>
-<!-- Circular Image -->
-<div style="flex: 1; max-width: 500px; height: 350px; display: flex; justify-content: center; align-items: center;">
-    <div style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden;">
-        <img src="img/map.png" alt="Map Image" style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-</div>
+
 
 
 </main>

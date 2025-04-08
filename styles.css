@@ -16,6 +16,8 @@ header {
     align-items: center;
     padding: 10px 20px;
     background-color: #ffffff;
+    background: linear-gradient(to right, #a76787, #8663ab, #608899);
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
      
 }
 
@@ -249,7 +251,6 @@ nav ul li:hover ul.dropdown {
 }
 
 
-/* 🔹 Background Video */
 /* 🔹 General Reset */
 * {
     margin: 0;
@@ -257,12 +258,23 @@ nav ul li:hover ul.dropdown {
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
 /* 🔹 Background Video */
 .bg {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    position: relative; /* Ensure elements overlay correctly */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .bg-vid {
@@ -270,48 +282,38 @@ nav ul li:hover ul.dropdown {
     height: 100%;
     object-fit: cover;
     opacity: 0.3;
-   
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7); 
+    background: linear-gradient(to right, #ebb7d1, #b18bd9, #84b3c7);
 }
 
 /* 🔹 Overlay Text */
-.overlay-text, .overlay-text1 {
-    position: absolute;
-    text-align: center;
+.overlay-text,
+.overlay-text1,
+.overlay-text2 {
+    position: relative;
     width: 100%;
-   
+    text-align: center;
+    z-index: 10;
+    padding: 10px 20px;
 }
 
 .overlay-text {
-    top: 20%;
     font-size: 2.5rem;
     font-weight: bold;
     color: #1b0245;
-    z-index: 10;
+    margin-bottom: 10px;
 }
 
 .overlay-text1 {
-    top: 35%;
     font-size: 2rem;
     color: #24055b;
+    margin-bottom: 20px;
 }
 
 /* 🔹 Register & Exhibit Buttons */
-.overlay-text2 {
-    position: absolute;
-    top: 55%;
-    width: 100%;
-    text-align: center;
-    color: #24055b;
-    z-index: 10;
-    margin-top: 60px;
-        
-}
-
 .overlay-text2 .nav-buttons {
     margin: 10px;
     padding: 12px 20px;
@@ -321,20 +323,17 @@ nav ul li:hover ul.dropdown {
     color: white;
     border-radius: 5px;
     text-decoration: none;
+    display: inline-block;
 }
-.overlay-text2{
-    margin-top: 80px;
-    margin-left: 60px;
-}
+
 /* 🔹 Countdown Timer */
 .countdown-container {
-    position: absolute;
-    bottom: 10%;
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
-    margin-left: 60px;
+    margin-top: 40px;
 }
 
 .countdown-box {
@@ -344,7 +343,6 @@ nav ul li:hover ul.dropdown {
     border-radius: 8px;
     color: rgb(32, 2, 114);
     width: 80px;
-    margin-left: 10px;
 }
 
 .countdown-box span {
@@ -356,150 +354,83 @@ nav ul li:hover ul.dropdown {
 @media (max-width: 1024px) {
     .overlay-text {
         font-size: 2rem;
-        top: 15%;
     }
 
     .overlay-text1 {
-        font-size: 1.2rem;
-        top: 30%;
+        font-size: 1.5rem;
     }
 
-    .overlay-text2 {
-        top: 40%;
-    }
-
-    .countdown-container {
-        flex-wrap: wrap;
-        gap: 10px;
+    .overlay-text2 .nav-buttons {
+        font-size: 16px;
+        padding: 10px 18px;
     }
 
     .countdown-box {
         width: 70px;
-        padding: 10px;
+        padding: 12px;
     }
 }
 
 @media (max-width: 768px) {
     .overlay-text {
         font-size: 1.8rem;
-        top: 12%;
+    }
+
+    .overlay-text1 {
+        font-size: 1.3rem;
+    }
+
+    .countdown-box {
+        width: 75px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .bg-vid {
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-text {
+        font-size: 1.5rem;
     }
 
     .overlay-text1 {
         font-size: 1.1rem;
-        top: 25%;
-    }
-.bg-vid{
-    height: 500px;
-}
-    .overlay-text2 {
-        top: 35%;
-        
     }
 
-    .nav-buttons {
-        font-size: 16px;
-        padding: 10px 18px;
-    }
-
-    .countdown-container {
-        bottom: 5%;
-        gap: 8px;
-        top: 55%;
+    .overlay-text2 .nav-buttons {
+        font-size: 14px;
+        padding: 8px 14px;
     }
 
     .countdown-box {
-        width: 65px;
+        width: 140px;
+        font-size: 1.1rem;
         padding: 8px;
-        height: 70px;
+        
     }
 }
-.sam{
-    top: 5px;
-}
-@media (max-width: 480px) {
+
+@media (max-width: 390px) {
     .overlay-text {
-        font-size: 1.5rem;
-        top: 8%;
+        font-size: 1.3rem;
     }
 
     .overlay-text1 {
         font-size: 1rem;
-        top: 20%;
     }
 
-    .overlay-text2 {
-        top: 40%;
-    }
-
-    .nav-buttons {
-        font-size: 14px;
-        padding: 8px 16px;
+    .overlay-text2 .nav-buttons {
+        font-size: 12px;
+        padding: 6px 12px;
     }
 
     .countdown-box {
         width: 55px;
-        font-size: 1.2rem;
-        padding: 6px;
-    }
-}
-
-@media (max-width: 456px) {
-    .overlay-text {
-        font-size: 1.3rem;
-        top: 7%;
-    }
-
-    .overlay-text1 {
         font-size: 1rem;
-        top: 18%;
-        top: 20%;
-        
-    }
-    .sam{
-        top: 5px;
-    }
-    .overlay-text2 {
-        top: 35%;
-        
-    }
-    .bg-vid{
-        height: 500px;
-        width: 500px;
-    }
-    .nav-buttons {
-        font-size: 13px;
-        padding: 6px 12px;
-    }
-    .countdown-container{
-        top: 60%;
-
-    }
-.bg{
-    height: 500px;
-}
-    .countdown-box {
-        width: 85px;
-        padding: 8px;
-        height: 90px;
-        
-        background-color: rgb(188, 191, 236);
-    }
-   
-}
-
-
-/* 🔹 Nav Buttons Container */
-.nav-buttons-container {
-    margin-left: 20px;
-}
-@media (max-width:390){
-    .countdown-box {
-        width: 70px;
-        padding: 8px;
-        height: 90px;
-        
-        
+        padding: 6px;
     }
 }
 
@@ -574,7 +505,7 @@ body {
 .card {
     background: white;
     padding: 20px;
-    width: 250px;
+    width: 450px;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -975,3 +906,4 @@ iframe {
 
 
 }
+

@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("DR7okqRLG9AS7Rwbd"); // Replace with your actual Public Key
+    emailjs.init("JFbODXAoTre8wkrKW"); // Replace with your actual Public Key
     document.querySelector(".btn-send-otp").addEventListener("click", SendOTP);
 });
 
@@ -20,7 +20,7 @@ function SendOTP() {
         passcode: otpCode
     };
 
-    emailjs.send("service_nhy612h", "template_lbx8xvk", emailTemplateParams)
+    emailjs.send("service_uk6w9rk", "template_xgsdpzq", emailTemplateParams)
     .then((response) => {
         console.log('Success:', response);
         alert("OTP sent to " + email.value);
@@ -53,3 +53,6 @@ function setupOTPVerification(otpCode) {
         }
     });
 }
+
+
+

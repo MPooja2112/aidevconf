@@ -47,14 +47,9 @@ function setupOTPVerification(otpCode) {
             localStorage.setItem("userEmail", email);
 
             // Redirect to next-page.html
-            window.location.href = "next-page1.html";
+            window.location.href = "next-page5.html";
         } else {
             alert("Invalid OTP. Please try again.");
         }
     });
 }
-
-
-
-
-
